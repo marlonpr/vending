@@ -52,15 +52,15 @@ void GetSession(String *ssid, String *pass){
     if (current != '|' && current != '\t' && current != '\n' && current != '\r') {
       *pass += char(EEPROM.read(i));
       flash_pass = *pass;
-    } 
+    }
   }
 
   for (int i = 32; i < 96; i++) {
     current = EEPROM.read(i);
     if (current != '|' && current != '\t' && current != '\n' && current != '\r') {
-      *ssid += char(EEPROM.read(i));      
+      *ssid += char(EEPROM.read(i));
       flash_ssid = *ssid;
-    } 
+    }
   }
 
   EEPROM.end();

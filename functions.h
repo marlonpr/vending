@@ -1,11 +1,17 @@
 String GetMacAddress() {
+  // Oportunidad: Usar una función para splitear la MAC address
   String mac_address_string = WiFi.macAddress();
-  String mac = String(mac_address_string[0]) + String(mac_address_string[1]) +
-      String(mac_address_string[3]) + String(mac_address_string[4]) + String(mac_address_string[6])
-      + String(mac_address_string[7]) + String(mac_address_string[9]) + String(mac_address_string[10])
-      + String(mac_address_string[12]) + String(mac_address_string[13]) + String(mac_address_string[15])
-      + String(mac_address_string[16]);
-  return mac;
+  // Split string by ':'
+  String mac_address_split[6];
+  int i = 0;
+  for (int j = 0; j < mac_address_string.length(); j++) {
+    if (mac_address_string[j] == ':') {
+      i++;
+    } else {
+      mac_address_split[i] += mac_address_string[j];
+    }
+  }
+  return mac_address_split;
 }
 
 bool HasStoredWifi() {

@@ -4,12 +4,6 @@
 #include <WebServer.h>
 #include <EEPROM.h>
 
-// Gobals
-String flash_ssid;
-String flash_pass;
-byte resetButtonPin = 21;
-int relays[12] = {27, 4, 22, 32, 2, 33, 15, 26, 25, 14, 13, 12};
-
 #include "functions.h"
 #include "http.h"
 #include "keypad.h"
@@ -18,6 +12,11 @@ int relays[12] = {27, 4, 22, 32, 2, 33, 15, 26, 25, 14, 13, 12};
 #include "restServer.h"
 #include "AP.h"
 
+// Gobals
+String flash_ssid;
+String flash_pass;
+byte resetButtonPin = 21;
+int relays[12] = {27, 4, 22, 32, 2, 33, 15, 26, 25, 14, 13, 12};
 
 void setup() {
   Serial.begin(115200); 

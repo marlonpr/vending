@@ -7,7 +7,7 @@ DynamicJsonDocument ValidateBarcode(String barcode) {
   
   DynamicJsonDocument body(512);
   body["barcode"] = barcode;
-  body["serial_number"] =  GetMacAddress();
+  body["serial_number"] = GetMacAddress();
   String requestBody;
   serializeJson(body, requestBody);
   
